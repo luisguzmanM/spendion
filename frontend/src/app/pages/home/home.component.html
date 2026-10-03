@@ -1,0 +1,54 @@
+<ng-container *ngIf="!loading">
+
+  <app-header [user]="user"></app-header>
+
+  <mat-divider></mat-divider>
+
+  <div class="grid">
+    <div class="summaries">
+      <ng-container>
+        <app-container-summary  class="container-summary"></app-container-summary>
+      </ng-container>
+    </div>
+
+    <div class="transactions">
+      <app-transaction class="table-transactions"></app-transaction>
+    </div>
+
+    <div class="categories">
+      <ng-container>
+        <app-container-budgets></app-container-budgets>
+      </ng-container>
+    </div>
+
+    <button mat-raised-button class="btn-add-category-desktop" (click)="openDialogCrud()">
+      <span>➕&nbsp;Add budget</span>
+    </button>
+  </div>
+
+  <mat-tab-group class="tabs">
+    <mat-tab label="Summary">
+      <div class="summaries">
+        <app-container-summary ></app-container-summary>
+      </div>
+    </mat-tab>
+    <mat-tab label="Expenses">
+      <div class="transactions">
+        <app-transaction class="table-transactions"></app-transaction>
+      </div>
+    </mat-tab>
+    <mat-tab label="Budgets">
+      <div class="categories">
+        <app-container-budgets></app-container-budgets>
+      </div>
+      <button mat-fab color="primary" class="btn-add-category-mobile" (click)="openDialogCrud()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-tab>
+  </mat-tab-group>
+
+</ng-container>
+
+<div class="spinner" *ngIf="loading">
+  <mat-spinner mode="indeterminate" color="primary" diameter="40"></mat-spinner>
+</div>

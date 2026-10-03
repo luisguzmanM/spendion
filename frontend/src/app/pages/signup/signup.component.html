@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="wrapper">
+    <form [formGroup]="form" (ngSubmit)="signup()" (keyup.enter)="signup()">
+  
+      <app-logo></app-logo>
+    
+      <div class="form-group">
+        <mat-form-field>
+          <mat-label>First name</mat-label>
+          <input matInput type="text" placeholder="Ex: John" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last name</mat-label>
+          <input matInput type="text" placeholder="Ex: Smith" formControlName="lastName">
+        </mat-form-field>
+      </div>
+    
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Ex: jsmith@gmail.com" formControlName="email" [readonly]="loading">
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="******" formControlName="password" [readonly]="loading">
+      </mat-form-field>
+    
+      <button mat-raised-button type="submit" color="primary" [disabled]="form.invalid || loading">Sign up</button>
+  
+      <div class="spinner" *ngIf="loading">
+        <mat-spinner mode="indeterminate" color="primary" diameter="40"></mat-spinner>
+      </div>
+    
+    </form>
+    
+    <div class="login-wrapper">
+      <span>Do you have an account?</span>
+      <button mat-stroked-button color="primary" [routerLink]="['/login']">Login</button>
+    </div>
+  </div>
+
+  <div class="container-illustration">
+    <app-illustration [image]="illustration" [title]="'Welcome to spendion'" [message]="message"></app-illustration>
+  </div>
+  <div class="container-message">
+    <h2>{{ message }}</h2>
+  </div>
+</div>
+
+<app-creator></app-creator>

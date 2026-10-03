@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.container img {
+  width: 100%;
+}
+
+h1 {
+  font-weight:500;
+  font-size: 22px;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 700px){
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+}

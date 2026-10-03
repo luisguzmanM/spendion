@@ -1,0 +1,28 @@
+<mat-progress-bar mode="query" *ngIf="loading"></mat-progress-bar>
+
+<mat-toolbar>
+  <mat-toolbar-row>
+    <h1>{{ data.title ? data.title : defaultTitle }}</h1>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="onNoClick()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<form [formGroup]="form" (ngSubmit)="confirm()" (keyup.enter)="confirm()">
+  <mat-form-field class="full-width">
+    <mat-label>{{ data.labelTextField ? data.labelTextField : defaultLabelTextField }}</mat-label>
+    <input matInput type="text" placeholder="Ex. Pizza" value="" formControlName="title">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>{{ data.labelNumberField ? data.labelNumberField : defaultLabelNumberField }}</mat-label>
+    <input matInput type="number" placeholder="Ex. 9.90" value="" formControlName="amount">
+  </mat-form-field>
+</form>
+
+<div mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-stroked-button (click)="onNoClick()" [disabled]="loading">Cancel</button>
+  <button mat-raised-button color="primary" (click)="confirm()" [disabled]="form.invalid || loading">Confirm</button>
+</div>

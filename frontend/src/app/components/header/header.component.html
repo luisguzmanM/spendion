@@ -1,0 +1,40 @@
+<mat-toolbar>
+
+  <mat-toolbar-row class="toolbar-row">
+
+    <button mat-icon-button [routerLink]="[backRoute]" *ngIf="backRoute">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <h1>{{ title }}</h1>
+  
+    <span class="spacer"></span>
+
+    <div class="banner" *ngIf="handleBannerSubscription()">
+      <p *ngIf="free_days > 0">🚀&nbsp;You have <strong>{{ free_days }}</strong> {{ free_days > 1 ? 'days' : 'day' }} of free use. After this you need to get a <strong><a [routerLink]="['/setting']">subscription</a></strong></p>
+      <p *ngIf="free_days === 0">🚀&nbsp;Get a <strong><a [routerLink]="['/setting']">subscription</a></strong> to continue using <strong>spendion</strong></p>
+    </div>
+
+    <span class="spacer"></span>
+  
+    <span class="username">Hey, {{ user.fname }}</span>
+  
+    <app-avatar class="avatar" [matMenuTriggerFor]="menu"></app-avatar>
+  
+    <mat-menu #menu="matMenu">
+  
+      <button mat-menu-item [routerLink]="['/setting']">
+        <span>⚙️&nbsp;Setting</span>
+      </button>
+  
+      <mat-divider></mat-divider>
+  
+      <button mat-menu-item (click)="loggout()">
+        <span>👋🏻&nbsp;Log Out</span>
+      </button>
+  
+    </mat-menu>
+  </mat-toolbar-row>
+
+
+</mat-toolbar>

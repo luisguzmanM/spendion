@@ -1,0 +1,16 @@
+<mat-progress-bar mode="query" *ngIf="loading"></mat-progress-bar>
+
+<mat-toolbar>
+  <mat-toolbar-row>
+    <h1>{{ data.title ? data.title : defaultTitle }}</h1>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="wrapper-action-message">
+  <p>{{ data.actionMessage }}</p>
+</div>
+
+<div mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-stroked-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" cdkFocusInitial (click)="confirm()">Confirm</button>
+</div>

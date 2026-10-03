@@ -1,0 +1,37 @@
+{
+  "name": "spendion_backend",
+  "version": "1.0.0",
+  "description": "Backend app to track expenses",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "spendion",
+    "backend",
+    "node",
+    "express",
+    "app"
+  ],
+  "author": {
+    "name": "Luis Guzmán",
+    "email": "guzmanluis.lg@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.6",
+    "path": "^0.12.7",
+    "pg": "^8.11.3",
+    "request": "^2.88.2",
+    "resend": "^6.32.0",
+    "simple-encryptor": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

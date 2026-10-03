@@ -1,0 +1,24 @@
+<mat-card class="card">
+  <div class="card-wrapper">
+    <div class="card-icon">
+      <span>📌</span>
+    </div>
+    <div class="card-info">
+      <div class="card-info-left">
+        <span class="truncate-text" [matTooltip]="data.title"><strong>Budget</strong>: {{ data.title }}</span>
+        <span class="truncate-text"><strong>Amount</strong>: {{ data.amount | number:'1.2-2' }} €</span>
+      </div>
+      <div class="card-info-right">
+        <span class="truncate-text">
+          <strong>Spent</strong>: <span [ngClass]="{'spent': data.spent > 0}">{{ data.spent | number:'1.2-2' }}</span> €
+        </span>
+        <span class="truncate-text">
+          <strong>Free</strong>: <span [ngClass]="{'free': data.spent > 0}">{{ data.free | number:'1.2-2' }}</span> €
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="card-wrapper">
+    <mat-progress-bar mode="determinate" [value]="data.progress"></mat-progress-bar>
+  </div>
+</mat-card>

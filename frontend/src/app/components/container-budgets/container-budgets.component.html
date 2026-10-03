@@ -1,0 +1,4 @@
+<ng-container *ngIf="budgets.length !== 0">
+  <app-budget *ngFor="let budget of budgets" [data]="budget" (click)="openDialogSelectedBudget(budget)"></app-budget>
+</ng-container>
+<div class="empty-wrapper" *ngIf="budgets.length === 0">Empty budget list</div>

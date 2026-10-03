@@ -1,0 +1,19 @@
+<app-header [user]="user" [title]="'Setting'" [backRoute]="'/home'"></app-header>
+
+<mat-divider></mat-divider>
+
+<mat-tab-group>
+
+  <mat-tab label="Subscription">
+    <div class="grid">
+      <app-payment-card></app-payment-card>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="&nbsp;&nbsp;&nbsp;Profile&nbsp;&nbsp;">
+    <div class="grid">
+      <app-profile-setting></app-profile-setting>
+    </div>
+  </mat-tab>
+  
+</mat-tab-group>

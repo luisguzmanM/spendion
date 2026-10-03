@@ -1,0 +1,49 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.category-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+form {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 48%;
+}
+
+.wrapper-no-data {
+  min-height: 296px;
+  max-height: 296px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b4b4b4;
+}
+
+mat-table {
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.d-flex-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
