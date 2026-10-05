@@ -15,14 +15,12 @@ const emailRegistro = async (data) => {
   console.log(`   ${confirmationLink}`);
   console.log(`==================================================\n`);
 
-  // If using placeholder credentials in .env, skip attempting to send via SMTP
-  const isPlaceholder = !process.env.EMAIL_USER ||
-    process.env.EMAIL_USER.includes('your_email') ||
-    !process.env.EMAIL_PASS ||
-    process.env.EMAIL_PASS.includes('your_app_password');
+  // If using placeholder or missing Resend API key, skip attempting to send
+  const isResendMissing = !process.env.RESEND_API_KEY ||
+    process.env.RESEND_API_KEY.includes('your_resend_api_key');
 
-  if (isPlaceholder) {
-    console.log('ℹ️  Skipping SMTP send: EMAIL_USER/EMAIL_PASS are placeholders in .env.');
+  if (isResendMissing) {
+    console.log('ℹ️  Skipping email send: RESEND_API_KEY is not configured in environment variables.');
     return;
   }
 
