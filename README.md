@@ -74,7 +74,7 @@ npm start
 
 The application is deployed and available to use here:
 
-👉 **[Launch Spendion App](https://your-deployment-url-here.com)** *(replace with your live URL)*
+👉 **[Launch Spendion App](https://spendion.onrender.com)**
 
 ---
 
