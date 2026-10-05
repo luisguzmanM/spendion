@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const emailRegistro = async (data) => {
   const { email, name, token } = data;
 
-  const frontendUrl = process.env.FRONTEND_URL || (process.env.NODE_ENV === 'prod' ? 'https://www.spendion.app' : 'http://localhost:4200');
+  const frontendUrl = process.env.FRONTEND_URL || (process.env.NODE_ENV === 'prod' ? 'https://spendion.onrender.com' : 'http://localhost:4200');
   const confirmationLink = `${frontendUrl}/account-confirmed?token=${token}`;
 
   console.log(`\n==================================================`);
