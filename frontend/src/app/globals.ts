@@ -1,1 +1,1 @@
-export const API_URL = window.location.href.includes('localhost') ? 'http://localhost:3000' : 'https://spendion-backend.onrender.com';
+export const API_URL = window.location.href.includes('localhost') ? 'http://localhost:3000' : 'https://spendion-api.onrender.com';
